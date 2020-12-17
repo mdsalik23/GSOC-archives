@@ -39,7 +39,7 @@ def organization_proj(soup_org,year):
         name = project.h5.text.strip()
         project_name = project["aria-label"]
         project_desc = project.find('div',class_="archive-project-card__content md-padding font-black-54").text.strip()
-        project_list.append([name,project_name,project_desc])
+        project_list.append([name,project_name,project_desc].replace("\n"," "))
     return project_count,project_list
 
 org_dataset = set()
